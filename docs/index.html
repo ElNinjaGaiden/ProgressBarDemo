@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html manifest="" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress Bar</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+    <div class="app">
+        <div class="progress-container">
+            <div class="header">
+                Your Progress
+            </div>
+            <div class="inner">
+                <div class="inner-top">
+                    <div class="reached">Reached:</div>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
+                        <div class="progress-number" id="progress-number">$56</div>
+                    </div>
+                    <div class="target">Target<br/>$125</div>
+                </div>
+                <div class="inner-bottom">
+                    You need $69 more to reach your target
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var progress = document.getElementById('progress'),
+                progressNumber = document.getElementById('progress-number'),
+                counter = 0;
+
+            setTimeout(function () {
+                progress.className += ' animate';
+                progressNumber.className += ' animate';
+            }, 200);
+
+            function start(){
+                if(counter < 56){
+                    setTimeout(function(){
+                        counter++;
+                        progressNumber.innerHTML = '$' + counter;
+                        start();
+                    }, 35);
+                }
+            }
+            start(0);
+        })();
+    </script>
+</body>
+</html>
