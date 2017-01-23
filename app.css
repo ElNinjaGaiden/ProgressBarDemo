@@ -1,0 +1,102 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.app {
+    height: 100%;
+    width: 100%;
+}
+
+.center-helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.progress-container {
+    border: 1px solid black;
+    background-color: lightgrey;
+    min-height: 225px;
+    width: 450px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-container .header {
+    background-color: black;
+    color: white;
+    text-align: left;
+    padding: 5px 8px;
+}
+
+.progress-container .inner {
+    background-color: white;
+    margin: 25px;
+    height: 150px;
+    padding: 15px 25px;
+    border: 1px solid black;
+}
+
+.progress-container .inner .inner-top {
+    display: -webkit-box;
+}
+
+.progress-container .inner .inner-bottom {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.progress-container .reached {
+    color: darkslategray;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.progress-container .progress-bar {
+    width: 200px;
+    height:20px;
+    margin: 0 10px;
+    border: 1px solid black;
+}
+
+.progress-container .progress-bar.animate .progress {
+    width: 50%;
+}
+
+.progress-container .progress-bar .progress {
+    background-color: #00AA00;
+    height: 100%;
+    width: 0;
+    -webkit-transition: width 2s;
+    transition: width 2s;
+}
+
+.progress-container .progress-bar .progress.animate {
+    width: 44.8%;
+}
+
+.progress-container .target {
+    color: white;
+    background-color: grey;
+    text-align: center;
+    padding: 10px;
+    height: 35px;
+    border: 1px solid black;
+}
+
+.progress-container .progress-bar .progress-number {
+    margin-left: 0;
+    width: 26px;
+    -webkit-transition: margin-left 2s;
+    transition: margin-left 2s;
+}
+
+.progress-container .progress-bar .progress-number.animate {
+    margin-left: calc(44.8% - 13px);
+}
